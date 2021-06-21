@@ -1,0 +1,19 @@
+applications:
+- name: cpapp-srv
+  disk_quota: 1G
+  env:
+    DEPLOY_ATTRIBUTES: |-
+      {
+        "app-content-digest" : "4543D783D820E99ADCA47F3FE167475D"
+      }
+  instances: 1
+  memory: 1G
+  routes:
+  - route: engsrvcloud-farzriskcw24-dev-cpapp-srv.cfapps.sap.hana.ondemand.com
+  services:
+  - cpapp-destination
+  - cpapp-connectivity
+  - cpapp-db
+  - cpapp-uaa
+  - cpapp-ems
+  stack: cflinuxfs3
